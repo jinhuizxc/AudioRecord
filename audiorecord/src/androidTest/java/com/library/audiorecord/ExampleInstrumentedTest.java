@@ -1,4 +1,4 @@
-package com.example.audiorecord;
+package com.library.audiorecord;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

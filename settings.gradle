@@ -1,2 +1,1 @@
 include ':app', ':audiorecord'
-rootProject.name='AudioRecord'

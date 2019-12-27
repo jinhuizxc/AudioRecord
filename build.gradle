@@ -18,10 +18,16 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
         
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext{
+    cymChadVersion = '2.9.35'
+    butterknifeVersion = '8.4.0'
 }

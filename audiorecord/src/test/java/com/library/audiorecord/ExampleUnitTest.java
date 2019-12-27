@@ -1,4 +1,4 @@
-package com.example.audiorecord;
+package com.library.audiorecord;
 
 import org.junit.Test;
 

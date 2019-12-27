@@ -1,4 +1,4 @@
-package com.example.audiorecord.audio;
+package com.library.audiorecord.audio;
 
 import android.media.MediaRecorder;
 

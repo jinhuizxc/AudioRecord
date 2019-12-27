@@ -1,4 +1,4 @@
-package com.example.audiorecord;
+package com.library.audiorecord;
 
 import android.app.Dialog;
 import android.content.Context;

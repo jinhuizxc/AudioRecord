@@ -1,4 +1,4 @@
-package com.example.audiorecord;
+package com.library.audiorecord.audio;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -7,13 +7,14 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 
-import com.example.audiorecord.DialogManager;
-import com.example.audiorecord.R;
-import com.example.audiorecord.audio.AudioManager;
+import com.library.audiorecord.DialogManager;
+import com.library.audiorecord.R;
+
+import java.io.File;
 
 
 /**
@@ -52,7 +53,6 @@ public class AudioRecorderButton extends AppCompatButton implements AudioManager
         //偷个懒，并没有判断 是否存在， 是否可读。
 
         String dir = Environment.getExternalStorageDirectory() + "/record_audios";
-
         mAudioManager = new AudioManager(dir);
         mAudioManager.setOnAudioStateListener(this);
         //按钮长按 准备录音 包括start
@@ -88,6 +88,7 @@ public class AudioRecorderButton extends AppCompatButton implements AudioManager
                 try {
                     Thread.sleep(100);
                     mTime += 0.1f;
+                    Log.e(TAG, "录音时间mTime: " + mTime);
                     mHandler.sendEmptyMessage(MSG_VOICE_CHANGED);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -187,7 +188,6 @@ public class AudioRecorderButton extends AppCompatButton implements AudioManager
         mReady = false;
         changeState(STATE_NORMAL);
         mTime = 0;
-
     }
 
     private boolean wantToCancel(int x, int y) {
