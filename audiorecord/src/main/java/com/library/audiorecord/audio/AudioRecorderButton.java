@@ -107,7 +107,7 @@ public class AudioRecorderButton extends AppCompatButton implements AudioManager
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MSG_AUDIO_PREPARED:
-                    //TODO 真正现实应该在audio end prepared以后
+                    //TODO 真正显示应该在audio end prepared以后
                     mDialogManager.showRecordingDialog();
                     isRecording = true;
                     new Thread(mGetVoiceLevelRunnable).start();
